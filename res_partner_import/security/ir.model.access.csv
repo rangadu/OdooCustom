@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+res_partner_import.access_res_partner_import_wizard,access_res_partner_import_wizard,res_partner_import.model_res_partner_import_wizard,base.group_user,1,1,1,1

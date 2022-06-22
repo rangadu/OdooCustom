@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Res partner import wizard form view-->
+    <record model="ir.ui.view" id="res_partner_import_wizard_view_form">
+        <field name="name">res.partner.import.wizard.view.form</field>
+        <field name="model">res.partner.import.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Import Contacts">
+                <sheet>
+                    <div class="alert alert-primary" role="alert" colspan="4">
+                        <center>
+                            <span class="mb-4" style="font-weight:bold">Please select a file to import</span><br/>
+                            <field name="file" filename="file_name"/>
+                        </center>
+                    </div>
+                </sheet>
+                <footer>
+                    <button name="action_import" type="object" string="Import" class="oe_highlight"/>
+                    <button string="Discard" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!--Action view res partner import wizard-->
+    <record model="ir.actions.act_window" id="action_view_res_partner_import_wizard">
+        <field name="name">Import Contacts</field>
+        <field name="res_model">res.partner.import.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!--Menuitem for import contacts-->
+    <menuitem id="menu_res_partner_import_contacts"
+              name="Import Contacts"
+              action="action_view_res_partner_import_wizard"
+              parent="contacts.res_partner_menu_config"
+              sequence="4"/>
+</odoo>
