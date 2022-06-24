@@ -8,12 +8,23 @@
         <field name="arch" type="xml">
             <form string="Import Contacts">
                 <sheet>
-                    <div class="alert alert-primary" role="alert" colspan="4">
-                        <center>
-                            <span class="mb-4" style="font-weight:bold">Please select a file to import</span><br/>
-                            <field name="file" filename="file_name"/>
-                        </center>
-                    </div>
+                    <group>
+                        <group string="DBO Entity">
+                            <!--dbo entity-->
+                            <field name="dbo_entity_file" filename="dbo_entity_file_name"/>
+                            <field name="dbo_entity_file_name" invisible="1"/>
+                        </group>
+                        <group string="DBO Entity Address">
+                            <!--dbo entity address-->
+                            <field name="dbo_entity_address_file" filename="dbo_entity_address_file_name"/>
+                            <field name="dbo_entity_address_file_name" invisible="1"/>
+                        </group>
+                        <group string="DBO Entity Contact">
+                            <!--dbo entity contact-->
+                            <field name="dbo_entity_contact_file" filename="dbo_entity_contact_file_name"/>
+                            <field name="dbo_entity_contact_file_name" invisible="1"/>
+                        </group>
+                    </group>
                 </sheet>
                 <footer>
                     <button name="action_import" type="object" string="Import" class="oe_highlight"/>
