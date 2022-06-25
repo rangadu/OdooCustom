@@ -13,6 +13,17 @@
                 <field name="entity_id"/>
             </field>
 
+            <!--Adding entity address type-->
+            <xpath expr="((//field[@name='child_ids']/form/sheet/group)[1]/group)[1]/field[@name='name']" position="before">
+                <field name="entity_address_type" attrs="{'invisible': [('type', '!=', 'other')]}"/>
+            </xpath>
+
+            <!--Adding home phone-->
+            <xpath expr="((//field[@name='child_ids']/form/sheet/group)[1]/group)[2]/field[@name='mobile']" position="after">
+                <field name="home_phone" widget="phone"/>
+                <field name="outlook_id"/>
+            </xpath>
+
         </field>
     </record>
 

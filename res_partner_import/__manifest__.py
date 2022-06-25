@@ -19,6 +19,7 @@ Import contacts with Excel/ CSV file
         'security/ir.model.access.csv',
         'views/res_partner_views.xml',
         'wizards/res_partner_import_wizard_views.xml',
+        'wizards/invalid_lines_wizard_views.xml',
     ],
     "application": False,
     "auto_install": False,
