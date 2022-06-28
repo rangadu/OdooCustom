@@ -8,19 +8,186 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
 
-            <!--Adding entity id-->
+            <!--Adding necessary fields-->
             <field name="vat" position="after">
                 <field name="entity_id"/>
             </field>
 
-            <!--Adding entity address type-->
+            <notebook position="before">
+                <group string="Imported Data">
+                    <group attrs="{'invisible': [('type', '!=', 'other')]}" string="Address">
+                        <!--Address import fields-->
+                        <field name="address_2"/>
+                        <field name="address_3"/>
+                        <field name="address_4"/>
+                        <field name="code"/>
+                        <field name="temp_id"/>
+                        <field name="is_default"/>
+                    </group>
+                    <group attrs="{'invisible': [('type', '!=', 'contact')]}">
+                        <!--Contact import fields-->
+                        <field name="dealer_id"/>
+                        <field name="company"/>
+                        <field name="entity_type_id"/>
+                        <field name="entity_category_id"/>
+                        <field name="entity_creator_id"/>
+                        <field name="entity_updater_id"/>
+                        <field name="abc_cat_id"/>
+                        <field name="bus_cat_id"/>
+                        <field name="notes"/>
+                        <field name="date_modified"/>
+                        <field name="switchboard"/>
+                        <field name="fax"/>
+                        <field name="url"/>
+                        <field name="vat_except_num"/>
+                        <field name="accept_back_orders"/>
+                        <field name="menthod_of_contact"/>
+                        <field name="catdesc"/>
+                        <field name="comptel"/>
+                        <field name="next_call_date"/>
+                        <field name="account_type_id"/>
+                        <field name="date_updated"/>
+                        <field name="compregnum"/>
+                        <field name="account_num"/>
+                        <field name="modified_by"/>
+                        <field name="account_supplier_id"/>
+                        <field name="account_customer_id"/>
+                        <field name="is_birthday_supplier"/>
+                        <field name="is_birthday_courier"/>
+                        <field name="is_anniversary_courier"/>
+                        <field name="is_anniversary_supplier"/>
+                        <field name="is_account_supplier"/>
+                        <field name="is_supplier"/>
+                        <field name="invoice_to"/>
+                        <field name="currency"/>
+                        <field name="credit_limit"/>
+                        <field name="payment_terms"/>
+                        <field name="sdl_no"/>
+                        <!---->
+                        <field name="alternate_contact_id"/>
+                        <field name="entity_contact_updater_id"/>
+                        <field name="entity_contact_creator_id"/>
+                        <field name="physical_addr_id"/>
+                        <field name="postal_addr_id"/>
+                        <field name="cont_type_id"/>
+                        <field name="position_id"/>
+                        <field name="phone2"/>
+                        <field name="phone3"/>
+                        <field name="ext"/>
+                        <field name="department"/>
+                        <field name="spouse"/>
+                        <field name="asst_title"/>
+                        <field name="asst_name"/>
+                        <field name="asst_phone"/>
+                        <field name="asst_ext"/>
+                        <field name="poaddress1"/>
+                        <field name="poaddress2"/>
+                        <field name="poaddress3"/>
+                        <field name="pocity"/>
+                        <field name="postate"/>
+                        <field name="pocode"/>
+                        <field name="poregion"/>
+                        <field name="pocountry"/>
+                        <field name="send_email"/>
+                        <field name="send_sms"/>
+                        <field name="birth_date"/>
+                        <field name="path"/>
+                        <field name="province"/>
+                        <field name="entity_htype"/>
+                        <field name="owning_user_id"/>
+                        <field name="position"/>
+                        <field name="asstemail"/>
+                        <field name="sendpost"/>
+                    </group>
+                    <group attrs="{'invisible': [('type', '!=', 'contact')]}">
+                        <field name="sic_code"/>
+                        <field name="ofo_no"/>
+                        <field name="markup"/>
+                        <field name="client_rating"/>
+                        <field name="manual_rating"/>
+                        <field name="sales_cons_id"/>
+                        <field name="alternate_company_id"/>
+                        <field name="comments"/>
+                        <field name="card_type_id"/>
+                        <field name="credit_card_name"/>
+                        <field name="credit_card_number"/>
+                        <field name="exp_month"/>
+                        <field name="exp_year"/>
+                        <field name="bank_recon_notes"/>
+                        <field name="acc_stat_id"/>
+                        <field name="avg_payment_time"/>
+                        <field name="vendor_number"/>
+                        <field name="source_id"/>
+                        <field name="pricelistID"/>
+                        <field name="bank_branch_name"/>
+                        <field name="bank_branch_code"/>
+                        <field name="debit_order"/>
+                        <field name="ref_no"/>
+                        <field name="tax_type_id"/>
+                        <field name="industry_id"/>
+                        <field name="entity_subtype_id"/>
+                        <field name="temp_id_varchar"/>
+                        <field name="is_vat_exempt"/>
+                        <field name="in_active"/>
+                        <field name="cnt_order_number"/>
+                        <field name="cnt_id_number"/>
+                        <field name="cnt_damage_waiver"/>
+                        <field name="cnt_sites"/>
+                        <!---->
+                        <field name="birthday_supplier_id"/>
+                        <field name="birthday_courier_id"/>
+                        <field name="anniversary_supplier_id"/>
+                        <field name="anniversary_courier_id"/>
+                        <field name="anniversary_date"/>
+                        <field name="dissacosiate"/>
+                        <field name="account_ref"/>
+                        <field name="id_number"/>
+                        <field name="bank_name"/>
+                        <field name="account_no"/>
+                        <field name="account_name"/>
+                        <field name="bank_account_name"/>
+                        <field name="branch_code"/>
+                        <field name="acc_type_id"/>
+                        <field name="emailref"/>
+                        <field name="expiry_date"/>
+                        <field name="is_credit_card"/>
+                        <field name="in_use"/>
+                        <field name="agent_ref"/>
+                        <field name="agent_id"/>
+                        <field name="press"/>
+                        <field name="proj_cust"/>
+                        <field name="completed"/>
+                        <field name="department_id"/>
+                        <field name="use_comp_addr"/>
+                        <field name="additional1"/>
+                        <field name="additional2"/>
+                        <field name="additional3"/>
+                        <field name="additional4"/>
+                        <field name="additional_id5"/>
+                        <field name="additional_id6"/>
+                        <field name="additional_id7"/>
+                        <field name="additional_id8"/>
+                        <field name="screenshot_path"/>
+                    </group>
+                </group>
+            </notebook>
+
             <xpath expr="((//field[@name='child_ids']/form/sheet/group)[1]/group)[1]/field[@name='name']" position="before">
+                <!--Adding entity address type-->
                 <field name="entity_address_type" attrs="{'invisible': [('type', '!=', 'other')]}"/>
+                <!--Address import fields-->
+                <field name="address_2" attrs="{'invisible': [('type', '!=', 'other')]}"/>
+                <field name="address_3" attrs="{'invisible': [('type', '!=', 'other')]}"/>
+                <field name="address_4" attrs="{'invisible': [('type', '!=', 'other')]}"/>
+                <field name="code" attrs="{'invisible': [('type', '!=', 'other')]}"/>
+                <field name="temp_id" attrs="{'invisible': [('type', '!=', 'other')]}"/>
+                <field name="is_default" attrs="{'invisible': [('type', '!=', 'other')]}"/>
             </xpath>
 
-            <!--Adding home phone-->
             <xpath expr="((//field[@name='child_ids']/form/sheet/group)[1]/group)[2]/field[@name='mobile']" position="after">
+                <!--Adding home phone-->
                 <field name="home_phone" widget="phone"/>
+                <!--Adding outlook id-->
                 <field name="outlook_id"/>
             </xpath>
 

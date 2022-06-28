@@ -10,7 +10,7 @@
     "description": """
 Import contacts with Excel/ CSV file
 """,
-    "version": "15.0.1.0.0",
+    "version": "15.0.1.0.1",
     "depends": [
         "base",
         "contacts",
@@ -26,3 +26,5 @@ Import contacts with Excel/ CSV file
     "installable": True,
     "license": 'LGPL-3'
 }
+
+# Version 15.0.1.0.1: Import all fields to partner
